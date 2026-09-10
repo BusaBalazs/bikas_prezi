@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bikás Park Felfedező — Javaslat Újbuda Önkormányzata részére</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --green-deep: #0a2055;
+        --green-mid: #0a2055;
+        --green-mid-2: #3a7bd5;
+        --cyan: #2fc6de;
+        --cream: #f6f2e9;
+        --cream-2: #efe9db;
+        --bronze: #8a6a43;
+        --ink: #0f1f3d;
+        --white: #ffffff;
+        --line: rgba(10, 32, 85, 0.14);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        background: var(--cream);
+        color: var(--ink);
+        line-height: 1.6;
+        font-size: 17px;
+      }
+      h1,
+      h2,
+      h3,
+      .display {
+        font-family: "Sora", sans-serif;
+        margin: 0;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      @media (max-width: 640px) {
+        .wrap {
+          padding: 0 20px;
+        }
+        body {
+          font-size: 16px;
+        }
+      }
+
+      /* ---------- Header ---------- */
+      header.site {
+        background: var(--green-deep);
+        color: var(--cream);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 32px;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .nav-brand img {
+        height: 34px;
+        width: auto;
+      }
+      .nav-brand span {
+        font-family: "Sora", sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        color: var(--cream);
+        opacity: 0.85;
+      }
+      .nav a.cta {
+        font-family: "Sora", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        background: var(--cyan);
+        color: var(--ink);
+        padding: 9px 18px;
+        border-radius: 100px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        position: relative;
+        min-height: 92vh;
+        display: flex;
+        align-items: center;
+        background: #0c1f1a;
+        overflow: hidden;
+      }
+      .hero img.bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 35%;
+        opacity: 0.55;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(12, 31, 26, 0.15) 0%,
+          rgba(12, 31, 26, 0.55) 55%,
+          rgba(12, 31, 26, 0.94) 100%
+        );
+      }
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        padding: 64px 32px 68px;
+        max-width: 1180px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .tag {
+        display: inline-block;
+        font-family: "Sora", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--ink);
+        background: var(--cyan);
+        padding: 6px 14px;
+        border-radius: 100px;
+        margin-bottom: 28px;
+      }
+      .hero h1 {
+        color: var(--white);
+        font-size: clamp(32px, 5.2vw, 58px);
+        font-weight: 700;
+        line-height: 1.08;
+        max-width: 15ch;
+      }
+      .hero p.lead {
+        color: rgba(246, 242, 233, 0.85);
+        font-size: clamp(16px, 2vw, 19px);
+        max-width: 52ch;
+        margin-top: 22px;
+        font-weight: 400;
+      }
+
+      /* ---------- Section basics ---------- */
+      section {
+        padding: 96px 0;
+      }
+      @media (max-width: 640px) {
+        section {
+          padding: 64px 0;
+        }
+      }
+      section.dark {
+        background: var(--green-deep);
+        color: var(--cream);
+      }
+      section.dark h2,
+      section.dark h3 {
+        color: var(--white);
+      }
+      .kicker {
+        font-family: "Sora", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--green-mid-2);
+        margin-bottom: 14px;
+      }
+      section.dark .kicker {
+        color: var(--cyan);
+      }
+      h2.section-title {
+        font-size: clamp(26px, 3.4vw, 38px);
+        font-weight: 700;
+        max-width: 20ch;
+        margin-bottom: 22px;
+      }
+      .lede {
+        font-size: 19px;
+        max-width: 62ch;
+        color: var(--ink);
+      }
+      section.dark .lede {
+        color: rgba(246, 242, 233, 0.88);
+      }
+      .col-2 {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      @media (max-width: 860px) {
+        .col-2 {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+      }
+
+      /* reveal animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ---------- Photo band ---------- */
+      .photo-band img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        min-height: 280px;
+      }
+      @media (max-width: 860px) {
+        .photo-band {
+          display: none;
+        }
+      }
+      .photo-band figure {
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .photo-band figcaption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 16px 20px;
+        font-size: 13px;
+        font-family: "Sora", sans-serif;
+        color: #fff;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.55), transparent);
+      }
+
+      /* ---------- Koncepció ---------- */
+      .concept-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 32px;
+      }
+      .concept-card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .concept-card p {
+        margin: 0;
+        color: #3c4a46;
+        font-size: 15.5px;
+      }
+      .concept-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 36px;
+      }
+      @media (max-width: 640px) {
+        .concept-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- Steps ---------- */
+      .steps {
+        counter-reset: step;
+        margin-top: 40px;
+        border-top: 1px solid rgba(246, 242, 233, 0.18);
+      }
+      .step {
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        gap: 24px;
+        padding: 28px 0;
+        border-bottom: 1px solid rgba(246, 242, 233, 0.18);
+      }
+      .step .num {
+        counter-increment: step;
+        font-family: "Sora", sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--cyan);
+      }
+      .step .num::before {
+        content: counter(step, decimal-leading-zero);
+      }
+      .step h3 {
+        font-size: 19px;
+        color: var(--white);
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
+      .step p {
+        margin: 0;
+        color: rgba(246, 242, 233, 0.78);
+        font-size: 15.5px;
+        max-width: 56ch;
+      }
+
+      /* ---------- Demo ---------- */
+      .demo-box {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 40px;
+        align-items: center;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 36px;
+        margin-top: 36px;
+      }
+      @media (max-width: 640px) {
+        .demo-box {
+          grid-template-columns: 1fr;
+          text-align: center;
+          justify-items: center;
+        }
+      }
+      .demo-box .qr {
+        width: 150px;
+        height: 150px;
+        padding: 10px;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+      }
+      .demo-box .qr img {
+        width: 100%;
+        height: 100%;
+      }
+      .demo-box h3 {
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+      .demo-box p {
+        margin: 0 0 18px;
+        color: #3c4a46;
+        font-size: 15.5px;
+        max-width: 52ch;
+      }
+      .demo-box .demo-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: "Sora", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--white);
+        background: var(--green-deep);
+        padding: 11px 20px;
+        border-radius: 100px;
+        text-decoration: none;
+      }
+
+      /* ---------- Helyszín ---------- */
+      .site-photo {
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+      }
+      .site-photo img {
+        width: 100%;
+      }
+
+      /* ---------- Előnyök ---------- */
+      .benefits {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        margin-top: 40px;
+        border-top: 1px solid var(--line);
+      }
+      @media (max-width: 700px) {
+        .benefits {
+          grid-template-columns: 1fr;
+        }
+      }
+      .benefit {
+        padding: 26px 28px 26px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .benefits > .benefit:nth-child(odd) {
+        border-right: 1px solid var(--line);
+        padding-right: 36px;
+      }
+      .benefits > .benefit:nth-child(even) {
+        padding-left: 36px;
+      }
+      @media (max-width: 700px) {
+        .benefits > .benefit:nth-child(odd) {
+          border-right: none;
+          padding-right: 0;
+        }
+        .benefits > .benefit:nth-child(even) {
+          padding-left: 0;
+        }
+      }
+      .benefit h3 {
+        font-size: 17.5px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .benefit p {
+        margin: 0;
+        color: #3c4a46;
+        font-size: 15px;
+      }
+
+      /* ---------- Kapcsolat / footer ---------- */
+      footer.site {
+        background: var(--ink);
+        color: var(--cream);
+        padding: 76px 0 40px;
+      }
+      .contact-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 32px;
+        padding-bottom: 44px;
+        border-bottom: 1px solid rgba(246, 242, 233, 0.14);
+      }
+      footer.site h2 {
+        color: var(--white);
+        font-size: clamp(26px, 3.4vw, 36px);
+        max-width: 16ch;
+      }
+      .contact-details {
+        font-family: "Sora", sans-serif;
+        font-size: 15px;
+      }
+      .contact-details div {
+        margin-bottom: 6px;
+      }
+      .contact-details a {
+        text-decoration: none;
+        color: var(--cyan);
+      }
+      .foot-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 28px;
+        flex-wrap: wrap;
+        gap: 14px;
+        font-size: 13px;
+        color: rgba(246, 242, 233, 0.55);
+      }
+      .foot-bottom img {
+        height: 30px;
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site">
+      <div class="nav">
+        <div class="nav-brand">
+          <img src="assets/ujbuda_logo.svg" alt="Újbuda logó" />
+        </div>
+        <a class="cta" href="#kapcsolat">Kapcsolatfelvétel</a>
+      </div>
+    </header>
+
+    <!-- 1. HERO -->
+    <section class="hero">
+      <img
+        class="bg"
+        src="assets/bulls-hill.png"
+        alt="A Bikás park bikaszobra a dombtetőn"
+      />
+      <div class="hero-inner">
+        <span class="tag">Javaslat Újbuda Önkormányzata részére</span>
+        <h1>
+          Okostelefonból aktív játékszer: digitális kaland a Bikás parkban!
+        </h1>
+        <p class="lead">
+          Interaktív, QR-kódos felfedezőjáték, amely a szabadba csábítja a
+          gyerekeket és családokat.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. A PROBLÉMA & LEHETŐSÉG -->
+    <section id="miert">
+      <div class="wrap">
+        <div class="col-2">
+          <div class="reveal">
+            <div class="kicker">Élménydús mozgás a szabadban</div>
+            <h2 class="section-title">A digitális generáció megszólítása</h2>
+            <p class="lede">
+              A gyerekek ma idejük nagy részét a képernyők előtt töltik. A Bikás
+              Park Felfedező nem harcol a okostelefonok ellen, hanem
+              szövetségesül hívja őket. A kijelzőt a fizikai aktivitás és a
+              szabadtéri játék eszközévé formálja.
+            </p>
+          </div>
+          <div class="site-photo reveal">
+            <img
+              src="assets/ujbuda-sign-market.jpg"
+              alt="Példa egy kültéri QR-állomás kialakítására"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. JÁTÉKMENET -->
+    <section class="dark" id="hogyan">
+      <div class="wrap">
+        <div class="kicker">Kódvadászat</div>
+        <h2 class="section-title">A játékmenet egyszerű lépésekben</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="num"></div>
+            <div>
+              <h3>Séta és térképes navigáció</h3>
+              <p>
+                A játékos megnyitja a webapplikációt a telefonján, ahol az
+                interaktív térképen megjelennek a parkban kihelyezett
+                QR-állomások.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num"></div>
+            <div>
+              <h3>QR-kód beolvasás a helyszínen</h3>
+              <p>
+                A megszerzéshez oda kell sétálni a jelölt pontra. A megadott
+                időn belül beolvasott QR-kód aktiválja az adott állomás
+                feladatát.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num"></div>
+            <div>
+              <h3>Puzzle mini-játék</h3>
+              <p>
+                Ha mind a 8 darabka összejött, a játékos egy interaktív puzzle
+                kirakóval állítja össze a teljes képet.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num"></div>
+            <div>
+              <h3>Bővülő digitális album</h3>
+              <p>
+                A kirakott kép bekerül a játékos saját albumába, feloldva a
+                következő kategóriát és ösztönözve a további gyűjtést.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ÉLŐ DEMÓ -->
+    <section id="demo" style="background: var(--cream-2)">
+      <div class="wrap">
+        <div class="kicker">Élő demó</div>
+        <h2 class="section-title">A prototípus elkészült — tesztelje most!</h2>
+        <p class="lede">
+          Az alábbi QR-kód a Bikás Park Felfedező működő demóváltozatához vezet.
+          Nincs szükség applikáció letöltésére, a telefon kamerájával azonnal
+          indítható a játékélmény.
+        </p>
+        <div class="demo-box reveal">
+          <div class="qr">
+            <img
+              src="assets/demo_qr.png"
+              alt="QR-kód a Bikás Park Felfedező demójához"
+            />
+          </div>
+          <div>
+            <h3>Próbálja ki a játékmenetet</h3>
+            <p>
+              Tapasztalja meg a QR-beolvasást, Taurus segítségét, a kvízeket és
+              a puzzle-élményt közvetlenül az okostelefonján.
+            </p>
+            <a
+              class="demo-link"
+              href="https://bikas-park.netlify.app/"
+              target="_blank"
+              rel="noopener"
+              >Prototípus megnyitása</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. A KONCEPCIÓ -->
+    <section class="dark" id="koncepcio">
+      <div class="wrap col-2">
+        <div>
+          <div class="kicker">Rugalmas platform</div>
+          <h2 class="section-title">Nem csak egy egyszerű játék</h2>
+          <p class="lede">
+            A kihelyezett QR-kódok nem egyetlen játékhoz kötött statikus pontok,
+            hanem egy folyamatosan újrahasznosítható digitális infrastruktúrát
+            képeznek. A fizikai állomások megtartásával a háttértartalom
+            bármikor frissíthető, így a platform hosszú távon is változatos
+            kerületi programok, oktatási versenyek és szezonális kampányok
+            helyszínéül szolgál.
+          </p>
+        </div>
+
+        <div class="site-photo reveal">
+          <img
+            src="assets/qr-post.jpg"
+            alt="Példa egy kültéri QR-állomás kialakítására"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ELŐNYÖK AZ ÖNKORMÁNYZATNAK -->
+    <section id="elonyok" style="background: var(--cream-2)">
+      <div class="wrap">
+        <div class="kicker">Érték Újbudának</div>
+        <h2 class="section-title">
+          Miért ideális választás az Önkormányzatnak?
+        </h2>
+        <div class="benefits">
+          <div class="benefit">
+            <h3>Aktív, egészséges fiatalok</h3>
+            <p>
+              A képernyőidőt értékteremtő szabadtéri mozgássá és játékos
+              tanulássá alakítja a gyermekek számára.
+            </p>
+          </div>
+          <div class="benefit">
+            <h3>Rendkívül alacsony költségvetés</h3>
+            <p>
+              Nincs szükség drága hardverre vagy fejlesztésre: csupán egyszerű,
+              kihelyezett QR-állomásokra van szükség.
+            </p>
+          </div>
+          <div class="benefit">
+            <h3>Dinamikus és megújítható</h3>
+            <p>
+              Újbudai eseményekhez, ünnepekhez (Költészet napja, Halloween,
+              Húsvét stb.) igazított friss tartalom.
+            </p>
+          </div>
+          <div class="benefit">
+            <h3>A zöldterületek okos kihasználása</h3>
+            <p>
+              Új életet visz a parkba: a tematikus tartalmak nemcsak a
+              kikapcsolódást, hanem az interaktív tanulást és felfedezést is
+              szolgálják.
+            </p>
+          </div>
+          <div class="benefit">
+            <h3>Skálázható modell Újbuda-szerte</h3>
+            <p>
+              A Bikás parki sikeres tesztüzem után a koncepció könnyen
+              kiterjeszthető a kerület többi zöldterületére és parkjára is.
+            </p>
+          </div>
+          <div class="benefit">
+            <h3>Mérhető lakossági aktivitás</h3>
+            <p>
+              Pontos statisztika nyerhető a beolvasások számáról és a látogatási
+              csúcsidőszakokról.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. KAPCSOLAT & FOOTER -->
+    <footer class="site" id="kapcsolat">
+      <div class="wrap">
+        <div class="contact-row">
+          <h2>
+            Valósítsuk meg együtt Újbuda legmodernebb szabadtéri élményét!
+          </h2>
+          <div class="contact-details">
+            <div>MemQRy — QR-kód alapú interaktív élmények</div>
+            <div><a href="tel:+36703145178">+36 70 314 5178</a></div>
+            <div>
+              <a href="https://qrmb.hu" target="_blank" rel="noopener"
+                >qrmb.hu</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <span>MemQRy × Bikás Park Felfedező — koncepcióterv</span>
+          <img src="assets/ujbuda_logo.svg" alt="Újbuda logó" />
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const items = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+      items.forEach((i) => io.observe(i));
+    </script>
+  </body>
+</html>

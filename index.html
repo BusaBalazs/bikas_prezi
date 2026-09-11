@@ -316,8 +316,9 @@
         counter-increment: step;
         font-family: "Sora", sans-serif;
         font-weight: 700;
-        font-size: 15px;
+        font-size: 2rem;
         color: var(--cyan);
+        opacity: 0.5;
       }
       .step .num::before {
         content: counter(step, decimal-leading-zero);
@@ -328,11 +329,30 @@
         margin-bottom: 6px;
         font-weight: 600;
       }
+      .step-content {
+        width: min(100%, 900px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
       .step p {
         margin: 0;
         color: rgba(246, 242, 233, 0.78);
         font-size: 15.5px;
         max-width: 56ch;
+      }
+
+      @media (max-width: 640px) {
+        .step {
+          grid-template-columns: 1fr;
+          text-align: center;
+          justify-items: center;
+        }
+        .step-content {
+          flex-direction: column;
+          gap: 18px;
+        }
       }
 
       /* ---------- Demo ---------- */
@@ -531,7 +551,7 @@
               A gyerekek ma idejük nagy részét a képernyők előtt töltik. A Bikás
               Park Felfedező nem harcol a okostelefonok ellen, hanem
               szövetségesül hívja őket. A kijelzőt a fizikai aktivitás és a
-              szabadtéri játék eszközévé formálja.
+              játékos ismeretterjesztés eszközévé formálja.
             </p>
           </div>
           <div class="site-photo reveal">
@@ -549,47 +569,131 @@
       <div class="wrap">
         <div class="kicker">Kódvadászat</div>
         <h2 class="section-title">A játékmenet egyszerű lépésekben</h2>
+        <p>
+          A Bikás Park Felfedező egy szabadtéri, interaktív kódvadászat, ahol a
+          játékosok a parkban kihelyezett QR-állomásokat felkutatva gyűjthetik
+          össze a digitális albumuk hiányzó darabjait.
+        </p>
         <div class="steps">
           <div class="step">
             <div class="num"></div>
             <div>
-              <h3>Séta és térképes navigáció</h3>
-              <p>
-                A játékos megnyitja a webapplikációt a telefonján, ahol az
-                interaktív térképen megjelennek a parkban kihelyezett
-                QR-állomások.
-              </p>
+              <h3>Állomások felkeresése</h3>
+              <div class="step-content">
+                <p>
+                  Az interaktív térkép és a pontos instrukciók segítségével
+                  megkeresik a kihelyezett QR-kódokat.
+                </p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="52"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
             </div>
           </div>
           <div class="step">
             <div class="num"></div>
             <div>
-              <h3>QR-kód beolvasás a helyszínen</h3>
-              <p>
-                A megszerzéshez oda kell sétálni a jelölt pontra. A megadott
-                időn belül beolvasott QR-kód aktiválja az adott állomás
-                feladatát.
-              </p>
+              <h3>Kvízek és feladatok</h3>
+              <div class="step-content">
+                <p>
+                  A kódok beolvasásával az adott képhez kapcsolódó,
+                  ismeretterjesztő kvízkérdéseket oldanak meg.
+                </p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="52"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect width="5" height="5" x="3" y="3" rx="1" />
+                  <rect width="5" height="5" x="16" y="3" rx="1" />
+                  <rect width="5" height="5" x="3" y="16" rx="1" />
+                  <path d="M21 16h-3a2 2 0 0 0-2 2v3" />
+                  <path d="M12 7v3a2 2 0 0 0 2 2h3" />
+                  <path d="M9 12v3a2 2 0 0 1-2 2H4" />
+                </svg>
+              </div>
             </div>
           </div>
           <div class="step">
             <div class="num"></div>
             <div>
-              <h3>Puzzle mini-játék</h3>
-              <p>
-                Ha mind a 8 darabka összejött, a játékos egy interaktív puzzle
-                kirakóval állítja össze a teljes képet.
-              </p>
+              <h3>Gyűjtés és puzzle</h3>
+              <div class="step-content">
+                <p>
+                  A sikeresen teljesített állomásokért járó puzzle-darabkákból
+                  összeállítják a teljes képet, amely bekerül a saját,
+                  folyamatosan bővülő digitális albumukba.
+                </p>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="52"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M19.5 10a2.5 2.5 0 0 0 0 5H21v4a2 2 0 0 1-2 2h-4v-1.5a2.5 2.5 0 0 0-5 0V21H6a2 2 0 0 1-2-2v-4h1.5a2.5 2.5 0 0 0 0-5H4V6a2 2 0 0 1 2-2h4v1.5a2.5 2.5 0 0 0 5 0V4h4a2 2 0 0 1 2 2v4h-1.5z"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
           <div class="step">
             <div class="num"></div>
             <div>
-              <h3>Bővülő digitális album</h3>
-              <p>
-                A kirakott kép bekerül a játékos saját albumába, feloldva a
-                következő kategóriát és ösztönözve a további gyűjtést.
-              </p>
+              <h3>A fő cél</h3>
+              <div class="step-content">
+                <p>
+                  A fizikai mozgást és a játékos tanulást ötvözve minél több
+                  állomást teljesíteni, és hiánytalanul kirakni a teljes
+                  digitális gyűjteményt.
+                </p>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="52"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                  <path d="M4 22h16" />
+                  <path
+                    d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"
+                  />
+                  <path
+                    d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"
+                  />
+                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -672,10 +776,9 @@
             </p>
           </div>
           <div class="benefit">
-            <h3>Rendkívül alacsony költségvetés</h3>
+            <h3>Gyors és egyszerű telepítés</h3>
             <p>
-              Nincs szükség drága hardverre vagy fejlesztésre: csupán egyszerű,
-              kihelyezett QR-állomásokra van szükség.
+              Nincs szükség bonyolult hálózatra vagy hardverre: a park arculatához illeszkedő QR-táblák pillanatok alatt kihelyezhetők.
             </p>
           </div>
           <div class="benefit">
@@ -719,7 +822,7 @@
             Valósítsuk meg együtt Újbuda legmodernebb szabadtéri élményét!
           </h2>
           <div class="contact-details">
-            <div>MemQRy — QR-kód alapú interaktív élmények</div>
+            <div>QRMB — QR-kód alapú interaktív élmények</div>
             <div><a href="tel:+36703145178">+36 70 314 5178</a></div>
             <div>
               <a href="https://qrmb.hu" target="_blank" rel="noopener"
@@ -729,8 +832,8 @@
           </div>
         </div>
         <div class="foot-bottom">
-          <span>MemQRy × Bikás Park Felfedező — koncepcióterv</span>
-          <img src="assets/ujbuda_logo.svg" alt="Újbuda logó" />
+          <span>QRMB × Bikás Park Felfedező — koncepcióterv | 2026</span>
+          <img src="assets/qrmb.webp" alt="Újbuda logó" />
         </div>
       </div>
     </footer>
